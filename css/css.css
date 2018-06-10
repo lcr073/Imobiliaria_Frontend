@@ -1,0 +1,28 @@
+.parallax_banner{
+
+	padding-top:200px;
+	background-image: url("../img/wallpaper.jpg");
+
+	/* Altura do banner */
+	height: 600px;
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.banner_logo{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tema1{
+	background-color: red;
+}
+
+.tema2{
+	background-color: blue;
+}
