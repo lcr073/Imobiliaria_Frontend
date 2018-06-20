@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="css/css.css">		
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>			
+	</head>
+
+	<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="index.html">Oblako Imobiliária</a>
+    </nav>
+
+		<div class="row">
+    <div class="col-xs-3 col-md-3"></div>
+    <div class="col-xs-6 col-md-6" id="form-cadastro">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="anunciarImovel.html">Endereço</a></li>
+          <li class="breadcrumb-item"><a href="anunciarImovel.html">Características</a>
+          </li>
+          <li class="breadcrumb-item "><a href="anunciarImovel.html">Contato</a></li>
+        </ol>
+      </nav>
+      <div id ="imovel-endereco-form">
+        <form>
+          <div class="form-group">
+            <label for="form-name">CEP</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
+            <label for="form-name">Estado</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
+            <label for="form-name">Cidade</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
+            <label for="form-name">Bairro</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
+            <label for="form-name">Rua</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
+          </div>
+        </form>
+        <button type="submit" class="btn btn-primary">Próximo</button>
+      </div>
+
+      <div id ="imovel-caracteristicas-form">
+        <form>
+          <div class="form-group">
+            <label for="form-name">Área</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
+            <label for="form-name">Quartos</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
+            <label for="form-name">Banheiros</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
+            <label for="form-name">Valor Aluguel</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
+          </div>
+        </form>
+        <button type="submit" class="btn btn-secondary">Voltar</button>
+        <button type="submit" class="btn btn-primary">Próximo</button>
+      </div>
+
+      <div id ="imovel-contato-form">
+        <form>
+          <div class="form-group">
+            <label for="form-name">Telefone para Contato</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
+            <label for="form-name">Email para contato</label>
+            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
+          </div>
+        </form>
+        <button type="submit" class="btn btn-secondary">Voltar</button>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Cadastrar</button>
+      </div>
+
+    </div>
+    <div class="col-xs-3 col-md-3"></div>
+
+		<script type ="text/javascript" src="js/anunciarImovel.js"></script>
+	</body>
+
+</html>

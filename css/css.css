@@ -1,7 +1,7 @@
-.parallax_banner{
 
+.parallax_banner{
 	padding-top:200px;
-	background-image: url("../img/wallpaper.jpg");
+	background-image: url("../img/russia_wallpaper.jpg");
 
 	/* Altura do banner */
 	height: 600px;
@@ -25,4 +25,34 @@
 
 .tema2{
 	background-color: blue;
+}
+
+/*form usado para cadastrar usuario e imovel*/
+#form-cadastro{
+	margin-top: 70px;
+	margin-bottom: 20px;
+	background-color: white;
+}
+/*body do cadastrar usuario (mudar)*/
+#temp {
+	background-color: #3498db;
+}
+/*Anunciar Imovel*/
+#imovel-endereco-form{
+	
+}
+#imovel-caracteristicas-form{
+	display: none;
+}
+#imovel-contato-form{
+	display: none;
+}
+#email-warning{
+	display: none;
+}
+#password-warning{
+	display: none;
+}
+i.icon-red {
+    color: #A93A40;
 }

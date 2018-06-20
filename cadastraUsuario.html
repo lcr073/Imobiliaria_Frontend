@@ -2,6 +2,8 @@
 	<head>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 		<link rel="stylesheet" href="css/css.css">		
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -14,36 +16,40 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>			
 	</head>
 
-	<body>
+	<body id="temp">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="index.html">Oblako Imobiliária</a>
+    </nav>
+
+    
+   <div class="row">
+    <div class="col-xs-3 col-md-3"></div>
+    <div class="col-xs-6 col-md-6" id="form-cadastro">
   	<form>
-      </div>
-        <div class="form-group">
+      <div class="form-group">
         <label for="form-name">Nome Completo</label>
-        <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
+        <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo" required>
       </div>
       <div class="form-group">
         <label for="form-email">Email address</label>
-        <input type="text" name="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Digite seu email">
+        <input type="text" name="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Digite seu email" required>
         <small id="emailHelp" class="form-text text-muted">Nós nunca iremos divulgar seu email para outras pessoas.</small>
       </div>
-        <div class="form-group">
+      <div class="form-group">
         <label for="form-password">Senha</label>
-        <input type="password" name="password" class="form-control" id="form-password" placeholder="Senha">
-      </div>
+        <input type="password" name="password" class="form-control" id="form-password" placeholder="Senha" required>
       </div>
         <div class="form-group">
         <label for="form-cpf">CPF</label>
-        <input type="text" name="cpf"   class="form-control" id="form-cpf" placeholder="000.000.000-00">
-      </div>
+        <input type="text" name="cpf"   class="form-control" id="form-cpf" placeholder="000.000.000-00" required>
       </div>
         <div class="form-group">
         <label for="form-rg">RG</label>
-        <input type="text" name="rg"  class="form-control" id="form-rg" placeholder="00.000.000-0">
-      </div>
+        <input type="text" name="rg"  class="form-control" id="form-rg" placeholder="00.000.000-0" required>
       </div>
         <div class="form-group">
         <label for="form-tel">Telefone para contato</label>
-        <input type="text" name="tel" class="form-control" id="form-tel" placeholder="(00) 00000-0000">
+        <input type="text" name="tel" class="form-control" id="form-tel" placeholder="(00) 00000-0000" required>
       </div>
       <div class="form-check">
         <input type="checkbox" name="robot" class="form-check-input" id="check-not-robot">
@@ -51,8 +57,10 @@
       </div>
       <button type="submit" class="btn btn-primary" id="submit-btn">Cadastrar</button>
     </form>
+    </div>
+    <div class="col-xs-3 col-md-3"></div>
 
 
-    <script type ="text/javascript" src="js/cadastro_usuario.js"></script>
+    <script type ="text/javascript" src="js/cadastraUsuario.js"></script>
 	</body>
 </html>
