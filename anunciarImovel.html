@@ -4,14 +4,18 @@
 
 		<link rel="stylesheet" href="css/css.css">		
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>			
 	</head>
 
-	<body>
+	<body  class="form-background">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="index.html">Oblako Imobiliária</a>
     </nav>
@@ -21,61 +25,110 @@
     <div class="col-xs-6 col-md-6" id="form-cadastro">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="anunciarImovel.html">Endereço</a></li>
-          <li class="breadcrumb-item"><a href="anunciarImovel.html">Características</a>
-          </li>
-          <li class="breadcrumb-item "><a href="anunciarImovel.html">Contato</a></li>
+          <span id="label-endereco"><label>Endereço</label></span>
+          <span id="label-caracteristicas"><label>Características</label></span>
+          <span id="label-contato"><label>Contato</label></span>
         </ol>
       </nav>
-      <div id ="imovel-endereco-form">
-        <form>
-          <div class="form-group">
-            <label for="form-name">CEP</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
-            <label for="form-name">Estado</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
-            <label for="form-name">Cidade</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
-            <label for="form-name">Bairro</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
-            <label for="form-name">Rua</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="">
-          </div>
-        </form>
-        <button type="submit" class="btn btn-primary">Próximo</button>
-      </div>
 
-      <div id ="imovel-caracteristicas-form">
-        <form>
-          <div class="form-group">
-            <label for="form-name">Área</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
-            <label for="form-name">Quartos</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
-            <label for="form-name">Banheiros</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
-            <label for="form-name">Valor Aluguel</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
-          </div>
-        </form>
-        <button type="submit" class="btn btn-secondary">Voltar</button>
-        <button type="submit" class="btn btn-primary">Próximo</button>
-      </div>
+              <div id ="imovel-endereco-form">
+                <form>
+                  <div class="form-group">
+                    <label for="form-cep">CEP</label>
+                    <input type="text" name="cep" class="form-control" id="form-cep" placeholder="" required>
+                    <span id="cep-warning"><i class="material-icons icon-red">error</i>CEP necessário</span><br>
+                    <div class="form-group">
+                      <label for="form-estado">Estado</label>
+                      <select class="form-control" name="estado" class="form-control" id="form-estado" required>
+                        <option>AC</option>
+                        <option>AL</option>
+                        <option>AP</option>
+                        <option>AM</option>
+                        <option>BA</option>
+                        <option>CE</option>
+                        <option>DF</option>
+                        <option>GO</option>
+                        <option>MA</option>
+                        <option>MT</option>
+                        <option>MS</option>
+                        <option>MG</option>
+                        <option>PA</option>
+                        <option>PB</option>
+                        <option>PR</option>
+                        <option>PE</option>
+                        <option>PI</option>
+                        <option>RJ</option>
+                        <option>RN</option>
+                        <option>RS</option>
+                        <option>RO</option>
+                        <option>RR</option>
+                        <option>SC</option>
+                        <option>SP</option>
+                        <option>SE</option>
+                        <option>TO</option>
+                      </select>
+                    </div>
+                    <label for="form-cidade">Cidade</label>
+                    <input type="text" name="cidade" class="form-control" id="form-cidade" placeholder="" required>
+                    <span id="cidade-warning"><i class="material-icons icon-red">error</i>Cidade necessária</span><br>
+                    <label for="form-bairro">Bairro</label>
+                    <input type="text" name="bairro" class="form-control" id="form-bairro" placeholder="" required>
+                    <span id="bairro-warning"><i class="material-icons icon-red">error</i>Bairro necessário</span><br>
+                    <label for="form-rua">Rua</label>
+                    <input type="text" name="rua" class="form-control" id="form-rua" placeholder="" required>
+                    <span id="rua-warning"><i class="material-icons icon-red">error</i>Rua necessário</span><br>
+                  </div>
+                </form>
+                <button type="submit" class="btn btn-primary">Próximo</button>
+              </div>
 
-      <div id ="imovel-contato-form">
-        <form>
-          <div class="form-group">
-            <label for="form-name">Telefone para Contato</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
-            <label for="form-name">Email para contato</label>
-            <input type="text" name ="name"class="form-control" id="form-name" placeholder="Informe seu nome completo">
-          </div>
-        </form>
-        <button type="submit" class="btn btn-secondary">Voltar</button>
-        <button type="submit" class="btn btn-primary" id="submit-btn">Cadastrar</button>
-      </div>
+            
+          
+            <div id ="imovel-contato-form">
+              <form>
+                <div class="form-group">
+                  <label for="form-tel">Telefone para Contato</label>
+                  <input type="text" class="form-control" id="form-tel" placeholder="">
+                  <span id="tel-warning"><i class="material-icons icon-red">error</i>Telefone inválido</span><br>
+                  <label for="form-email">Email para contato</label>
+                  <input type="text" class="form-control" id="form-email" placeholder="">
+                  <span id="email-warning"><i class="material-icons icon-red">error</i>Email inválido</span><br>
+                </div>
+              </form>
+              <button type="submit" class="btn btn-secondary">Voltar</button>
+              <button type="submit" class="btn btn-primary" id="submit-btn">Cadastrar</button>
+            </div>
 
-    </div>
+            <div id ="imovel-caracteristicas-form">
+              <form>
+                <div class="row">
+                  <div class="col-xs-6 col-md-6">
+                    <div class="form-group">
+                      <label for="form-area">Área [m&#xB2]</label>
+                      <input input type="text" maxlength="4" name="area" class="form-control" id="form-area" placeholder="" required>
+                      <span id="area-warning"><i class="material-icons icon-red">error</i></span><br>
+                      <label for="form-aluguel">Valor Aluguel [R$]</label>
+                      <input type="text" maxlength="9"name="aluguel" class="form-control" id="form-aluguel" placeholder="" required>
+                      <span id="aluguel-warning"><i class="material-icons icon-red">error</i></span><br>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-md-6">
+                    <div class="form-group">
+                      <label for="form-quartos">Quartos</label>
+                      <input type="text" name="quartos" maxlength="2" class="form-control" id="form-quartos" placeholder="" required>
+                      <span id="quartos-warning"><i class="material-icons icon-red">error</i></span><br>
+                      <label for="form-banheiros">Banheiros</label>
+                      <input type="text" name="banheiros" maxlength="2" class="form-control" id="form-banheiros" placeholder="" required>
+                      <span id="banheiros-warning"><i class="material-icons icon-red">error</i></span><br>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-6"><input type="file" id="form-foto" name="pic" accept="image/*"></div>    
+              </form>
+                <button type="submit" class="btn btn-secondary">Voltar</button>
+                <button type="submit" class="btn btn-primary">Próximo</button>
+            </div>
+
     <div class="col-xs-3 col-md-3"></div>
 
 		<script type ="text/javascript" src="js/anunciarImovel.js"></script>

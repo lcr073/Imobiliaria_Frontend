@@ -33,12 +33,12 @@
 		      </li>
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Minha Conta
+		          <span class="user-name">Minha Conta</span>
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 		          <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="index.html">Login</a>
 		          <a class="dropdown-item" href="#">Meus contratos</a>
-		          <a class="dropdown-item" href="#">ZZZZZZ</a>
+		          <a class="dropdown-item" href="reclamacoes.html">Reclamações</a>
 		        </div>
 		      </li>
 		    </ul>
@@ -87,11 +87,84 @@
 								</p>
 								<form action="#" method="get" id="buscar">
 					                <div class="input-group">
-					                    <input class="form-control" id="system-search" name="f" placeholder="Search for" required>
-					                    <button type="submit" class="btn btn-default"><i class="material-icons">search</i></button>
+					                    <input class="form-control" id="system-search" name="f" placeholder="Doações" required>
+					                    <button type="submit" class="btn btn-default"id="search-btn"><i class="material-icons">search</i></button>
 					                </div>
             					</form>
-							</div>
+
+    								<div class="btn-group">
+  										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    										Quartos <span class="caret"></span>
+  										</button>
+  										<ul class="dropdown-menu">
+    										<div class="container">
+	    										<div class="row">
+	        										<div class="form-group">
+    													<div class="col-sm-7 col-md-7">
+    														<div class="input-group">
+    															<div id="radioBtn-1" class="btn-group">
+    																<a class="1 btn btn-primary btn-sm active" data-toggle="fun-1" data-title="1">1</a>
+                        											<a class="1 btn btn-primary btn-sm notActive" data-toggle="fun-1" data-title="2">2</a>
+    																<a class="1 btn btn-primary btn-sm notActive" data-toggle="fun-1" data-title="3">3</a>
+    																<a class="1 btn btn-primary btn-sm notActive" data-toggle="fun-1" data-title="4">4+</a>
+    															</div>
+    															<input type="hidden" name="fun-1" id="fun-1">
+    														</div>
+    													</div>
+    												</div>
+	    										</div>
+											</div>
+  										</ul>
+									</div>
+									<div class="btn-group">
+  										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    										Banheiros <span class="caret"></span>
+  										</button>
+  										<ul class="dropdown-menu">
+    										<div class="container">
+	    										<div class="row">
+	        										<div class="form-group">
+    													<div class="col-sm-7 col-md-7">
+    														<div class="input-group">
+    															<div id="radioBtn-2" class="btn-group">
+    																<a class="btn btn-primary btn-sm active" data-toggle="fun-2" data-title="1">1</a>
+                        											<a class="btn btn-primary btn-sm notActive" data-toggle="fun-2" data-title="2">2</a>
+    																<a class="btn btn-primary btn-sm notActive" data-toggle="fun-2" data-title="3">3</a>
+    																<a class="btn btn-primary btn-sm notActive" data-toggle="fun-2" data-title="4">4+</a>
+    															</div>
+    															<input type="hidden" name="fun-2" id="fun-2">
+    														</div>
+    													</div>
+    												</div>
+	    										</div>
+											</div>
+  										</ul>
+									</div>
+									<div class="btn-group">
+  										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    										Área <span class="caret"></span>
+  										</button>
+  										<ul class="dropdown-menu">
+    										<div class="container">
+	    										<div class="row">
+	    											<div>m&#xB2<input type="text" id="area-min"  maxlength="4"><span>-ATÉ-<br>m&#xB2<span><input type="text" id="area-max"  maxlength="4"></div>
+	    										</div>
+											</div>
+  										</ul>
+									</div>
+									<div class="btn-group">
+  										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    										Preço <span class="caret"></span>
+  										</button>
+  										<ul class="dropdown-menu">
+    										<div class="container">
+	    										<div class="row">
+	        										<div>R$<input type="text" id="price-min" maxlength="9"><span>-ATÉ-<br><span>R$<input type="text" id="price-max" maxlength="9"></div>
+	    										</div>
+											</div>
+  										</ul>
+									</div>
+							</div><!---->
 						</div>
 						<div class="col-xs-1 col-md-1">
 						</div>
@@ -99,24 +172,23 @@
 		</div>
 
 
-		<div class="container">
+		<div class="container" id="imv-search-result">
 			  <div class="row">
 			    <div class="col-12 col-sm-12  col-md-6 col-lg-4">
 						<div class="card" style="width: 18rem; margin-top: 3rem;">
 						  <img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
 						  <div class="card-body">
-						    <h5 class="card-title">Casa bonita</h5>
-						    <p class="card-text">Casa muito bonita localizada em um vangloriado barro por um preco incrivel !</p>
+						    <h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
+						    <p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
 						  </div>
 						  <ul class="list-group list-group-flush">
-						    <li class="list-group-item"><b>Quartos:</b> 3</li>
-						    <li class="list-group-item"><b>Quartos:</b> 3</li>
-						    <li class="list-group-item"><b>Bairro:</b> Propolis</li>
-						    <li class="list-group-item"><b>Preco:</b> R$ 12</li>						
+						    <li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
+						    <li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
+						    <li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
+						    <li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
 						  </ul>
 						  <div class="card-body">
-						    <a href="#" class="card-link">Card link</a>
-						    <a href="#" class="card-link">Another link</a>
+						    <button type="button" class="btn btn-primary">Alugar</button>
 						  </div>
 						</div>
 			    </div>
@@ -124,42 +196,97 @@
 						<div class="card" style="width: 18rem; margin-top: 3rem;">
 						  <img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
 						  <div class="card-body">
-						    <h5 class="card-title">Card title</h5>
-						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						    <h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
+						    <p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
 						  </div>
 						  <ul class="list-group list-group-flush">
-						    <li class="list-group-item">Cras justo odio</li>
-						    <li class="list-group-item">Dapibus ac facilisis in</li>
-						    <li class="list-group-item">Vestibulum at eros</li>
+						    <li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
+						    <li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
+						    <li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
+						    <li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
 						  </ul>
 						  <div class="card-body">
-						    <a href="#" class="card-link">Card link</a>
-						    <a href="#" class="card-link">Another link</a>
+						    <button type="button" class="btn btn-primary">Alugar</button>
 						  </div>
-			    	</div>
+						</div>
 			    </div>
 			    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
 						<div class="card" style="width: 18rem; margin-top: 3rem;">
 						  <img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
 						  <div class="card-body">
-						    <h5 class="card-title">Card title</h5>
-						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						    <h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
+						    <p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
 						  </div>
 						  <ul class="list-group list-group-flush">
-						    <li class="list-group-item">Cras justo odio</li>
-						    <li class="list-group-item">Dapibus ac facilisis in</li>
-						    <li class="list-group-item">Vestibulum at eros</li>
+						    <li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
+						    <li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
+						    <li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
+						    <li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
 						  </ul>
 						  <div class="card-body">
-						    <a href="#" class="card-link">Card link</a>
-						    <a href="#" class="card-link">Another link</a>
+						    <button type="button" class="btn btn-primary">Alugar</button>
 						  </div>
-			    		</div>		    
+						</div>		    
 			  </div>
+				<div class="col-12 col-sm-12  col-md-6 col-lg-4">
+					<div class="card" style="width: 18rem; margin-top: 3rem;">
+						<img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
+							<div class="card-body">
+						  		<h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
+						  		<p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
+							</div>
+								<ul class="list-group list-group-flush">
+						  		<li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
+						  		<li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
+						  		<li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
+						  		<li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
+								</ul>
+							<div class="card-body">
+						  		<button type="button" class="btn btn-primary">Alugar</button>
+							</div>
+					</div>
+			    </div>
+				<div class="col-12 col-sm-12  col-md-6 col-lg-4">
+					<div class="card" style="width: 18rem; margin-top: 3rem;">
+						<img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
+							<div class="card-body">
+						  		<h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
+						  		<p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
+							</div>
+								<ul class="list-group list-group-flush">
+						  		<li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
+						  		<li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
+						  		<li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
+						  		<li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
+								</ul>
+							<div class="card-body">
+						  		<button type="button" class="btn btn-primary">Alugar</button>
+							</div>
+					</div>
+			    </div>
+				<div class="col-12 col-sm-12  col-md-6 col-lg-4">
+					<div class="card" style="width: 18rem; margin-top: 3rem;">
+						<img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
+							<div class="card-body">
+						  		<h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
+						  		<p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
+							</div>
+								<ul class="list-group list-group-flush">
+						  		<li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
+						  		<li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
+						  		<li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
+						  		<li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
+								</ul>
+							<div class="card-body">
+						  		<button type="button" class="btn btn-primary">Alugar</button>
+							</div>
+					</div>
+			    </div>
 			</div>
 		</div>
 
 	<script src="js/loginUsuario.js"></script>
+	<script src="js/filter.js"></script>
 	</body>
 
 </html>

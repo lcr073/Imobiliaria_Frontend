@@ -19,23 +19,19 @@
     margin-right: auto;
 }
 
-.tema1{
-	background-color: red;
-}
 
-.tema2{
-	background-color: blue;
+.form-background{
+	background-color: #56A6EF;
 }
-
+.breadcrumb{
+	margin-top: 10px;
+}
 /*form usado para cadastrar usuario e imovel*/
 #form-cadastro{
 	margin-top: 70px;
 	margin-bottom: 20px;
-	background-color: white;
-}
-/*body do cadastrar usuario (mudar)*/
-#temp {
-	background-color: #3498db;
+	padding: 5px;
+	background-color: #fcfdff;
 }
 /*Anunciar Imovel*/
 #imovel-endereco-form{
@@ -44,7 +40,43 @@
 #imovel-caracteristicas-form{
 	display: none;
 }
+#label-caracteristicas{
+	display: none;
+}
 #imovel-contato-form{
+	display: none;
+}
+#label-contato{
+	display: none;
+}
+#email-warning{
+	display: none;
+}
+#cep-warning{
+	display: none;
+}
+#cidade-warning{
+	display: none;
+}
+#bairro-warning{
+	display: none;
+}
+#rua-warning{
+	display: none;
+}
+#area-warning{
+	display: none;
+}
+#aluguel-warning{
+	display: none;
+}
+#quartos-warning{
+	display: none;
+}
+#banheiros-warning{
+	display: none;
+}
+#tel-warning{
 	display: none;
 }
 #email-warning{
@@ -55,4 +87,25 @@
 }
 i.icon-red {
     color: #A93A40;
+}
+/**/
+#radioBtn-1 .notActive{
+    color: #3276b1;
+    background-color: #fff;
+}
+#radioBtn-2 .notActive{
+    color: #3276b1;
+    background-color: #fff;
+}
+.invalid {
+    color: #A93A40;
+}
+.valid {
+    color: green;
+}
+#reclamacoes-body{
+	margin-top: 100px;
+}
+.card{
+	margin-top:5px;
 }

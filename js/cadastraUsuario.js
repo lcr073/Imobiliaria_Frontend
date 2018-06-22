@@ -13,6 +13,48 @@ function validateEmail(email) {
   var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return regex.test(email);
 }
+function validatePassword(){
+  var min = $("#letter");
+  var mai = $("#capital");
+  var num = $("#number");
+  var len = $("#len");
+  var psw = $("#form-password");
+  
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(psw.val().match(lowerCaseLetters)) { 
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(psw.val().match(upperCaseLetters)) { 
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(psw.val().match(numbers)) { 
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+
+  return false;
+}
+var psw = $("#form-password");
+psw.keyup(function(){
+  validatePassword();
+});
 
 function validate() {// Função para validar campos do form
   var nome = $("#form-name").val();
@@ -30,7 +72,7 @@ function validate() {// Função para validar campos do form
   	alert("Email inválido");
   	return false;
   }
-  if(senha == ""){
+  if(!senha.match( /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/ )){
   	return false;
   }
   if(cpf == ""){
@@ -54,6 +96,9 @@ function validate() {// Função para validar campos do form
   	alert("Campo Telefone incompleto");
   	return false;
   }
+  if(notRobot == false){
+    return false;
+  }
 
   return true;
 }
@@ -67,6 +112,29 @@ $("#submit-btn").click(function(){
 			jsonData[this.name] = this.value;//popula o json com o valor do form
 			});
 			console.log(jsonData);//para debug
-			return jsonData;
+
+    	//Ajax para enviar dados para servidor
+      var json = JSON.stringify(jsonData);   
+      $.post("",json,    
+      function (data){
+        alert(data);
+      });
 		}
 });
+
+  //Handler global de erros do Ajax
+  $( document ).ajaxError(function(event, jqxhr, settings,thrownError ) {
+    console.log("Call do Ajax falhou, se liga no erro:\n");
+    console.log(jqxhr.status);
+
+    switch(jqxhr.status){
+      case 403:
+        console.log("Erro no DB");
+      break;
+
+      case 202:
+        console.log("Sucesso no DB");
+      break;
+    }
+    
+  });
