@@ -90,8 +90,7 @@ $("#imovel-contato-form .btn-primary").click(function(){
 	var tel = $("#form-tel").val();
 	var email = $("#form-email").val();
 	var files = document.getElementById('form-foto').files;
-  	var base64_img;
-
+  	
 	
 	/*console.log("cep: "+cep+" estado: "+estado+" cidade: "+cidade+" rua: "+rua+" bairro: "+bairro+" area: "+area+ 
 	" aluguel: "+aluguel+ " quartos: "+quartos+" banheiros: "+banheiros+" tel: "+tel+" email: "+email);*/
@@ -120,8 +119,10 @@ $("#imovel-contato-form .btn-primary").click(function(){
 			}
 		}
 	});
-	if (files.length > 0) {//mexendo (desvio)
-    	base64_img = getBase64(files[0]);
+
+
+	if (files.length > 0) {
+    	getBase64(files[0]);
   	}
 	console.log("Warnings: "+warnings);
 	if(warnings == 0){//Posso montar o JSON
@@ -131,12 +132,15 @@ $("#imovel-contato-form .btn-primary").click(function(){
 		jQuery.each(array,function(){
 		jsonData[this.name] = this.value;//popula o json com o valor do form
 		});
-
+		
+		//jsonData.img="base64_img"; base64 
 		console.log(jsonData);//para debug
+		jsonData.tipo="1";
+		jsonData.id_dono="1";//gamb
 		
 		//Ajax para enviar dados para servidor
 		var json = JSON.stringify(jsonData);   
-      	$.post("",json,    
+      	$.post("http://dellianapptest.ddns.net:2525/imobiliaria/Imobiliaria_Backend/back-end/api/cadastraImovel.php/",json,    
       	function (data){
         	alert(data);
       	});
@@ -151,11 +155,11 @@ $( document ).ajaxError(function(event, jqxhr, settings,thrownError ) {
 
 	switch(jqxhr.status){
 		case 403:
-			console.log("Erro no DB");
+			console.log("Usuário não logado / parâmetros faltando");
 		break;
 
-		case 202:
-			console.log("Sucesso no DB");
+		case 201:
+			console.log("Imovel cadastrado com êxito");
 		break;
 	}
 		
@@ -171,6 +175,7 @@ function getBase64(file) {
    reader.readAsDataURL(file);
    reader.onload = function () {
      var split = reader.result.split(",");
+     console.log(split[1]);
      return split[1];
    };
    reader.onerror = function (error) {

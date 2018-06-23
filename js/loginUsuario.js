@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 //função para validar campos no form
 	function validate(){
 		var email = $("#form-email").val();
@@ -42,12 +43,43 @@ $(document).ready(function() {
 	var json = JSON.stringify(jsonData);
 	$.post("http://dellianapptest.ddns.net:2525/imobiliaria/Imobiliaria_Backend/back-end/login/",json,		
 	function (data){
-		alert(data);
+		alert("Logado com sucesso");
+		var split = data.split("");
+		console.log(split[0]);
+		//guardar id user em cookie
+		setCookie('idCookie',split[0],7);
+		//não estou conseguindo gerar um cookie
 	 });
-
+	
 		return false;
 	}
+
 	});
+
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {   
+    document.cookie = name+'=; Max-Age=-99999999;';  
+}
+
 //Handler global de erros do Ajax
 	var name = $(".user-name");
 	$( document ).ajaxError(function(event, jqxhr, settings,thrownError ) {
@@ -55,14 +87,16 @@ $(document).ready(function() {
 		console.log(jqxhr.status);
 
 		switch(jqxhr.status){
-			case 403:
-				console.log("Erro no DB");
+			case 403://email e/ou senha invalidos
+				alert("Email ou senha errados");
 			break;
 
-			case 200:
-				console.log("Sucesso no DB");
-				window.location.replace("http://stackoverflow.com");
-				name.text("Bem vindo");//concatena com nome do user
+			case 204://email e senha invalidos
+				alert("Email e senha errados");
+			break;
+
+			case 404:
+				alert("Busca em branco");
 			break;
 		}
 		

@@ -129,11 +129,11 @@ $("#submit-btn").click(function(){
 
     switch(jqxhr.status){
       case 403:
-        console.log("Erro no DB");
+       alert("Houve algum erro, há um campo não preenchido ou usuário/cpf já cadastrados");
       break;
 
-      case 202:
-        console.log("Sucesso no DB");
+      case 201:
+        alert("Usuário cadastrado com êxito");
       break;
     }
     

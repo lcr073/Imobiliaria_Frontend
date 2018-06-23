@@ -37,7 +37,7 @@
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 		          <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="index.html">Login</a>
-		          <a class="dropdown-item" href="#">Meus contratos</a>
+		          <a class="dropdown-item" href="meusImoveis.html">Meus Imóveis</a>
 		          <a class="dropdown-item" href="reclamacoes.html">Reclamações</a>
 		        </div>
 		      </li>
@@ -87,7 +87,7 @@
 								</p>
 								<form action="#" method="get" id="buscar">
 					                <div class="input-group">
-					                    <input class="form-control" id="system-search" name="f" placeholder="Doações" required>
+					                    <input class="form-control" id="system-search" name="f" placeholder="Estado" required>
 					                    <button type="submit" class="btn btn-default"id="search-btn"><i class="material-icons">search</i></button>
 					                </div>
             					</form>
@@ -147,7 +147,7 @@
   										<ul class="dropdown-menu">
     										<div class="container">
 	    										<div class="row">
-	    											<div>m&#xB2<input type="text" id="area-min"  maxlength="4"><span>-ATÉ-<br>m&#xB2<span><input type="text" id="area-max"  maxlength="4"></div>
+	    											<div>m&#xB2<input type="text" id="area-min"  maxlength="4"><span></div>
 	    										</div>
 											</div>
   										</ul>
@@ -159,7 +159,7 @@
   										<ul class="dropdown-menu">
     										<div class="container">
 	    										<div class="row">
-	        										<div>R$<input type="text" id="price-min" maxlength="9"><span>-ATÉ-<br><span>R$<input type="text" id="price-max" maxlength="9"></div>
+	        										<div>R$<input type="text" id="price-min" maxlength="9"><span></div>
 	    										</div>
 											</div>
   										</ul>
@@ -172,115 +172,8 @@
 		</div>
 
 
-		<div class="container" id="imv-search-result">
-			  <div class="row">
-			    <div class="col-12 col-sm-12  col-md-6 col-lg-4">
-						<div class="card" style="width: 18rem; margin-top: 3rem;">
-						  <img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
-						  <div class="card-body">
-						    <h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
-						    <p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
-						  </div>
-						  <ul class="list-group list-group-flush">
-						    <li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
-						    <li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
-						    <li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
-						    <li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
-						  </ul>
-						  <div class="card-body">
-						    <button type="button" class="btn btn-primary">Alugar</button>
-						  </div>
-						</div>
-			    </div>
-			    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-						<div class="card" style="width: 18rem; margin-top: 3rem;">
-						  <img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
-						  <div class="card-body">
-						    <h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
-						    <p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
-						  </div>
-						  <ul class="list-group list-group-flush">
-						    <li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
-						    <li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
-						    <li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
-						    <li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
-						  </ul>
-						  <div class="card-body">
-						    <button type="button" class="btn btn-primary">Alugar</button>
-						  </div>
-						</div>
-			    </div>
-			    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-						<div class="card" style="width: 18rem; margin-top: 3rem;">
-						  <img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
-						  <div class="card-body">
-						    <h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
-						    <p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
-						  </div>
-						  <ul class="list-group list-group-flush">
-						    <li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
-						    <li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
-						    <li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
-						    <li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
-						  </ul>
-						  <div class="card-body">
-						    <button type="button" class="btn btn-primary">Alugar</button>
-						  </div>
-						</div>		    
-			  </div>
-				<div class="col-12 col-sm-12  col-md-6 col-lg-4">
-					<div class="card" style="width: 18rem; margin-top: 3rem;">
-						<img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
-							<div class="card-body">
-						  		<h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
-						  		<p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
-							</div>
-								<ul class="list-group list-group-flush">
-						  		<li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
-						  		<li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
-						  		<li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
-						  		<li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
-								</ul>
-							<div class="card-body">
-						  		<button type="button" class="btn btn-primary">Alugar</button>
-							</div>
-					</div>
-			    </div>
-				<div class="col-12 col-sm-12  col-md-6 col-lg-4">
-					<div class="card" style="width: 18rem; margin-top: 3rem;">
-						<img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
-							<div class="card-body">
-						  		<h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
-						  		<p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
-							</div>
-								<ul class="list-group list-group-flush">
-						  		<li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
-						  		<li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
-						  		<li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
-						  		<li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
-								</ul>
-							<div class="card-body">
-						  		<button type="button" class="btn btn-primary">Alugar</button>
-							</div>
-					</div>
-			    </div>
-				<div class="col-12 col-sm-12  col-md-6 col-lg-4">
-					<div class="card" style="width: 18rem; margin-top: 3rem;">
-						<img class="card-img-top" src="img/violet_best_waifu.gif" alt="Card image cap">
-							<div class="card-body">
-						  		<h5 class="card-title"><span class="imv-endereco">Cinnamon roll</span></h5>
-						  		<p class="card-text"><span class="imv-desc">Too good for this world, too pure</span></p>
-							</div>
-								<ul class="list-group list-group-flush">
-						  		<li class="list-group-item"><b>Quartos: </b><span class="imv-quartos">3</span></li>
-						  		<li class="list-group-item"><b>Banheiros: </b><span class="imv-banheiros">3</span></li>
-						  		<li class="list-group-item"><b>Área: </b><span class="imv-area">75</span>m&#xB2</li>
-						  		<li class="list-group-item"><b>Preço: </b><span class="imv-preco">12</span>R$</li>						
-								</ul>
-							<div class="card-body">
-						  		<button type="button" class="btn btn-primary">Alugar</button>
-							</div>
-					</div>
+		<div class="container">
+			  <div class="row" id="imv-search-result">
 			    </div>
 			</div>
 		</div>
