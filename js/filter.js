@@ -42,34 +42,72 @@ $("#search-btn").click(function(){
 	//console.log(max_p);
 	var estado = $("#system-search").val();
 
-	var url = "http://dellianapptest.ddns.net:2525/imobiliaria/Imobiliaria_Backend/back-end/imovel/"+min_p+"/-1/"+min_a+"/-1/"+quartos+"/"+estado+"/"+banheiros+"/-1/-1/-1/-1";
+	var url = "http://dellianapptest.ddns.net:2525/imobiliaria/Imobiliaria_Backend/back-end/imovel/-1/-1/-1/-1/"+quartos+"/"+estado+"/"+banheiros+"/-1/-1/-1/-1";
+	var url_null = "http://dellianapptest.ddns.net:2525/imobiliaria/Imobiliaria_Backend/back-end/imovel/-1/-1/-1/-1/-1/-1/-1/-1/-1/-1/-1";
+																				  																 
 	console.log(url);
 
-	$.get(url, function(data, status){
+	var search = $("#system-search").val();
+	if(search == ""){
+		$.get(url_null, function(data, status){
 
     	console.log(JSON.parse(data));
     	var array = JSON.parse(data);
     	var len = JSON.parse(data).length;
     	console.log(len);
-    	console.log("so 1: ");
+    	var results = $("#imv-search-result");//é um div
+    	results.empty();
+    	
 
     	for (var key in array) {
-    if (array.hasOwnProperty(key)) {
-    	var n_quartos = array[key]["n_quartos"];
-    	var valor_aluguel = array[key]["valor_aluguel"];
-    	var n_banheiros = array[key]["valor_banheiros"];
-    	var area = array[key]["area"];
+    		if (array.hasOwnProperty(key)) {
 
-    	var cidade = array[key]["cidade"];
-    	var bairro = array[key]["bairro"];
-    	var rua = array[key]["rua"];
-    	var estado = array[key]["estado"];
+    			var n_quartos = array[key]["n_quartos"];
+    			var valor_aluguel = array[key]["valor_aluguel"];
+    			var n_banheiros = array[key]["n_banheiros"];
+    			var area = array[key]["area"];
 
-    	createCard(estado,cidade,bairro,rua,n_quartos,n_banheiros,area,valor_aluguel);
+    			var cidade = array[key]["cidade"];
+    			var bairro = array[key]["bairro"];
+    			var rua = array[key]["rua"];
+    			var estado = array[key]["estado"];
 
-    }}
+    			createCard(estado,cidade,bairro,rua,n_quartos,n_banheiros,area,valor_aluguel);
 
+    		}
+		}
     });
+
+		
+	}else{
+		$.get(url, function(data, status){
+
+    		console.log(JSON.parse(data));
+    		var array = JSON.parse(data);
+    		var len = JSON.parse(data).length;
+    		console.log(len);
+    		var results = $("#imv-search-result");//é um div
+    		results.empty();
+    	
+
+    		for (var key in array) {
+    			if (array.hasOwnProperty(key)) {
+    				var n_quartos = array[key]["n_quartos"];
+    				var valor_aluguel = array[key]["valor_aluguel"];
+    				var n_banheiros = array[key]["n_banheiros"];
+    				var area = array[key]["area"];
+
+    				var cidade = array[key]["cidade"];
+    				var bairro = array[key]["bairro"];
+    				var rua = array[key]["rua"];
+    				var estado = array[key]["estado"];
+
+    				createCard(estado,cidade,bairro,rua,n_quartos,n_banheiros,area,valor_aluguel);
+
+    			}
+			}
+    	});
+	}
 
 	return false
 
@@ -91,6 +129,7 @@ $("#area-max").keydown(function() {
 function createCard(estado,cidade,bairro,rua,quartos,banheiros,area,preco){
 		//seletor da seção de resultados
     	var results = $("#imv-search-result");//é um div
+    	
     //criar row class="col-12 col-sm-12  col-md-6 col-lg-4"
      	var row = document.createElement("div"); 
      	row.classList.add("col-12");

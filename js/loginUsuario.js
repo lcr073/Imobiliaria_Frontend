@@ -46,9 +46,9 @@ $(document).ready(function() {
 		alert("Logado com sucesso");
 		var split = data.split("");
 		console.log(split[0]);
-		//guardar id user em cookie
-		setCookie('idCookie',split[0],7);
-		//não estou conseguindo gerar um cookie
+		//guardar id user em session
+		sessionStorage.setItem("id", split[0]);
+		
 	 });
 	
 		return false;
@@ -96,7 +96,7 @@ function eraseCookie(name) {
 			break;
 
 			case 404:
-				alert("Busca em branco");
+				console.log("erro 404");
 			break;
 		}
 		

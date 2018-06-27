@@ -90,7 +90,6 @@ $("#imovel-contato-form .btn-primary").click(function(){
 	var tel = $("#form-tel").val();
 	var email = $("#form-email").val();
 	var files = document.getElementById('form-foto').files;
-  	
 	
 	/*console.log("cep: "+cep+" estado: "+estado+" cidade: "+cidade+" rua: "+rua+" bairro: "+bairro+" area: "+area+ 
 	" aluguel: "+aluguel+ " quartos: "+quartos+" banheiros: "+banheiros+" tel: "+tel+" email: "+email);*/
@@ -136,7 +135,7 @@ $("#imovel-contato-form .btn-primary").click(function(){
 		//jsonData.img="base64_img"; base64 
 		console.log(jsonData);//para debug
 		jsonData.tipo="1";
-		jsonData.id_dono="1";//gamb
+		jsonData.id_dono = sessionStorage.getItem("id");
 		
 		//Ajax para enviar dados para servidor
 		var json = JSON.stringify(jsonData);   
